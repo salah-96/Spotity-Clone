@@ -13,7 +13,7 @@ jobs:
         run: npm test -- --watchAll=false # Kör tester
 
       - name: Build the React app
-        run: npm run build # Bygger projektet
+        run: npm run dev # Bygger projektet
 
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
