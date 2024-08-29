@@ -1,6 +1,5 @@
 name: CI/CD for React App
 
-# Arbetsflödet körs när en push eller pull request görs till main-branchen
 on:
   push:
     branches: [main]
@@ -27,9 +26,8 @@ jobs:
         run: npm test -- --watchAll=false # Kör tester
 
       - name: Build the React app
-        run: npm run dev # Bygger projektet
+        run: npm run build # Använd "npm run build" istället för "npm run dev" för produktionsbygge
 
-      # Om du vill distribuera till GitHub Pages
       - name: Deploy to GitHub Pages
         if: ${{ github.ref == 'refs/heads/main' }}
         uses: peaceiris/actions-gh-pages@v3
